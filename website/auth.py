@@ -22,11 +22,13 @@ def sign_up():
     if len(email) < 4:
       flash("email not valid", category = "error")
     elif len(firstName) < 2:
-      flash("Name is too shot", category = "error")
+      flash("Name is too short", category = "error")
     elif len(lastName) < 2:
       flash("Last name is too short", category = "error")
     elif password1 != password2:
       flash("Password does not match", category = "error")
     elif len(password1) < 7:
       flash("Password is too short", category = "error")
+    else:
+      flash("Account Created !", category = "success")
   return render_template("sign-up.html")
